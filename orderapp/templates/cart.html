@@ -1,0 +1,251 @@
+
+{% extends "index.html" %}
+
+
+	{% load static %}
+	
+    {% block title %}<title>cart</title>{% endblock %}
+   
+   
+   
+   
+
+
+ 
+	
+    {% block main %}
+		
+        <section class="h-100 h-custom" style="background-color: #eee;">
+            <div class="container py-5 h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                  <div class="card">
+                    <div class="card-body p-4">
+          
+                      <div class="row">
+          
+                        <div class="col-lg-7">
+                          <h5 class="mb-3"><a href="{% url 'index' %}" style="text-decoration:none;" class="text-body"><i
+                                class="las la-arrow-left me-2 " ></i>Continue shopping</a></h5>
+                          <hr>
+          
+                          <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div>
+                              <p class="mb-1">Shopping cart</p>
+                              <p class="mb-0" id="numofitems"></p>
+                            </div>
+                           
+                          </div>
+                          <div id="itemscontainer">
+                          <!-- here gose items -->
+                          </div>
+                        </div>
+                        <div class="col-lg-5  my-4  "  style="color: #1A6692;"
+                        >
+          
+                          <div class="card   shadow  rounded-0  "  style="color: #1A6692;"
+                          style="color: #1A6692;">
+                            <div class="card-body">
+                              <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h5 class="mb-0">Order details</h5>
+                               
+                              </div>
+          
+                             
+                             
+          
+                              <hr class="my-4">
+          
+                              <div class="d-flex justify-content-between">
+                                <p class="mb-2 " style="color: #2F956D;">Subtotal</p>
+                                <p class="mb-2" id="subtotal" style="color: #2F956D;"></p>
+                              </div>
+          
+                              <div class="d-flex justify-content-between">
+                                <p class="mb-2 " style="color: #2F956D;">Shipping</p>
+                                <p class="mb-2 " id="shipping" style="color: #2F956D;"></p>
+                              </div>
+          
+                              <div class="d-flex justify-content-between mb-4">
+                                <p class="mb-2 " style="color: #2F956D;">Total(Incl. taxes)</p>
+                                <p class="mb-2 " id="total" style="color: #2F956D;"></p>
+                              </div>
+          
+                              {% if time %}
+                              <form method="GET" action="{% url 'placeorder' %}">
+                                {% csrf_token %}
+                                <div class="d-flex flex-row-reverse">
+                              <button id="checkout" class=" btn rounded-0 " style="background-color: #2F956D;color:white;">
+                                
+                                  <span type="submit">Checkout <i class="las la-arrow-right"></i></span>
+                              
+                                
+                              </button>
+                            </div>
+                            </form> 
+                              {% else %}
+
+                              <div id="checkout" class=" btn rounded-0 " style="background-color: red;color:white;">
+                                  
+                                <span>We Are Closed </span>
+                              </div>
+                            
+                              {% endif %}
+          
+                            </div>
+                          </div>
+          
+                        </div>
+          
+                      </div>
+          
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          {% endblock main %}
+
+
+
+{% block script %}
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/parallax.min.js' %}"></script>
+<script>
+  $(document).ready(function(){
+    // Handle click on paging links
+    $('.tm-paging-link').click(function(e){
+      e.preventDefault();
+      
+      var page = $(this).text().toLowerCase();
+      $('.tm-gallery-page').addClass('hidden');
+      $('#tm-gallery-page-' + page).removeClass('hidden');
+      $('.tm-paging-link').removeClass('active');
+      $(this).addClass("active");
+    });
+  });
+</script>
+<script>
+
+
+
+if (localStorage.cart) {
+
+order_details()
+fillitems()
+
+
+} else {
+  order_details()
+window.localStorage.setItem("cart",JSON.stringify([]))
+console.log(localStorage.cart)
+}
+
+
+
+function order_details(){
+  var subtotal=document.querySelector("#subtotal")
+  var total=document.querySelector("#total")
+  var shipping=document.querySelector("#shipping")
+  var numofitems=document.querySelector("#numofitems")
+  var checkout=document.querySelector("#checkout")
+  var cart=JSON.parse(localStorage.getItem("cart"))
+  if (cart.length==0){
+    subtotal.innerHTML="0 INR"
+    total.innerHTML="0 INR"
+    shipping.innerHTML="0 INR"
+    numofitems.innerHTML="You have no items in your cart"
+    cartcount.innerHTML=0
+    checkout.disabled = true
+  } 
+  else{
+    var sum=0
+    cart.forEach(function (Item) {
+		
+			
+		
+		sum+=Item.qty*Item.price;
+			
+		
+	});
+    subtotal.innerHTML=sum+" INR"
+    total.innerHTML=sum+20+" INR"
+    shipping.innerHTML="20 INR"
+    numofitems.innerHTML="You have "+cart.length+" items in your cart"
+    cartcount()
+   
+
+  }
+
+
+
+
+}
+
+
+function fillitems(){
+  var itemscontainer=document.querySelector("#itemscontainer")
+  itemscontainer.innerHTML=""
+  var cart=JSON.parse(localStorage.getItem("cart"));
+  cart.forEach(element => {
+  
+  itemscontainer.innerHTML+=`<div class="card mb-3">
+                          <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                              <div class="d-flex flex-row align-items-center">
+                                <div>
+                                  <img
+                                    src="`+element.imgurl+`"
+                                    class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+                                </div>
+                                <div class="ms-3">
+                                  <h5>`+element.dish+`</h5>
+                                  
+                                </div>
+                              </div>
+                              <div class="d-flex flex-row align-items-center">
+                                
+                                <div style="width: 30px;">
+                                  <h5 class="fw-normal mb-0">`+element.qty+`</h5>
+                                </div>
+                               
+                                <div style="width: 80px;">
+                                  <h5 class="mb-0">`+element.price+`INR</h5>
+                                </div>
+                                <a id="`+element.dish+`" onClick="deleteitem(`+`'`+element.dish+`'`+`)" class="delete" style="color: red;    margin-bottom: -5px;"><i class="las h3 la-trash"></i></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>`
+});
+
+
+cartcount()
+
+}
+
+
+function deleteitem(dishname){
+  console.log(dishname)
+  var cart=JSON.parse(localStorage.getItem("cart"));
+
+  cart.forEach(function (Item,i) {
+		console.log(dishname+1)
+			if(Item.dish==dishname){
+        console.log(dishname+2)
+        cart.splice(i, 1)
+      }
+			
+		
+	});
+  console.log(dishname+3)
+  window.localStorage.setItem("cart",JSON.stringify(cart))
+  fillitems()
+  order_details()
+
+}
+</script>
+
+{% endblock script %}
+

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{% load static %}
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css" rel="stylesheet" />
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	{% block title %}<title>Simple House Template</title>{% endblock %}
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />    
+	<link href="{% static 'css/templatemo-style.css' %}" rel="stylesheet" />
+</head>
+<!--
+
+Simple House
+
+https://templatemo.com/tm-539-simple-house
+
+-->
+<body> 
+
+	<div class="container">
+	<!-- Top box -->
+		<!-- Logo & Site Name -->
+		<div class="placeholder">
+			<div class="parallax-window" data-parallax="scroll" data-image-src="{% static 'img/simple-house-01.jpg' %}">
+				<div class="tm-header">
+					<div class="row tm-header-inner">
+						<div class="col-md-6 col-12">
+							<img src="{% static 'img/simple-house-logo.png' %}" alt="Logo" class="tm-site-logo" /> 
+							<div class="tm-site-text-box">
+								<h1 class="tm-site-title">Simple House</h1>
+								<h6 class="tm-site-description">new restaurant template</h6>	
+							</div>
+						</div>
+						<nav class="col-md-6 col-12 tm-nav">
+							<ul class="tm-nav-ul">
+								<li class="tm-nav-li"><a href="index.html" class="tm-nav-link active">Home</a></li>
+								<li class="tm-nav-li"><a href="about.html" class="tm-nav-link">About</a></li>
+								<li class="tm-nav-li"><a href="contact.html" class="tm-nav-link">Contact</a></li>
+								<li class="tm-nav-li"><a href="{% url 'cart' %}" class="tm-nav-link"><i class="las la-shopping-cart " style="
+									font-size: 26px;
+								"></i></a></li>
+								<span id="cartcount" style="padding-right: 10px;background-color: aliceblue;color:black;height: 23px;width: 45px;border-radius: 100%;position: relative;right: 33px;bottom: 16px;">4</span>
+							</ul>
+						</nav>	
+					</div>
+				</div>
+			</div>
+		</div>
+{% block main %}
+		<main>
+			<header class="row tm-welcome-section">
+				<h2 class="col-12 text-center tm-section-title">Welcome to Simple House</h2>
+				
+			</header>
+			
+			<div class="tm-paging-links">
+				<nav>
+					<ul>
+						<li class="tm-paging-item"><a href="#" class="tm-paging-link active">Pizza</a></li>
+						<li class="tm-paging-item"><a href="#" class="tm-paging-link">Salad</a></li>
+						<li class="tm-paging-item"><a href="#" class="tm-paging-link">Noodle</a></li>
+					</ul>
+				</nav>
+			</div>
+
+			<!-- Gallery -->
+			<div class="row tm-gallery">
+				<!-- gallery page 1 -->
+				<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="{% static 'img/gallery/01.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Fusce dictum finibus</h4>
+								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
+								<span class="tm-gallery-price mb-4">45 </span><span class="tm-gallery-price mb">INR</span>
+								
+								<a  class="btn addtocart" >Add to Cart</a>
+								
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="{% static 'img/gallery/02.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Aliquam sagittis</h4>
+								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
+								<span class="tm-gallery-price mb mb-4">65  </span><span class="tm-gallery-price mb">INR</span>
+								
+								<a  class="btn addtocart" >Add to Cart</a>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="{% static 'img/gallery/03.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Sed varius turpis</h4>
+								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
+								<span class="tm-gallery-price mb mb-4">30</span><span class="tm-gallery-price mb">INR</span>
+								
+								<a  class="btn addtocart" >Add to Cart</a>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="{% static 'img/gallery/04.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Aliquam sagittis</h4>
+								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
+								<span class="tm-gallery-price mb mb-4">25</span><span class="tm-gallery-price mb">INR</span>
+								
+								<a  class="btn addtocart" >Add to Cart</a>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="{% static 'img/gallery/05.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Maecenas eget justo</h4>
+								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
+								<span class="tm-gallery-price mb mb-4">80 </span><span class="tm-gallery-price mb">INR</span>
+								
+								<a  class="btn addtocart" >Add to Cart</a>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="{% static 'img/gallery/06.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Quisque et felis eros</h4>
+								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
+								<span class="tm-gallery-price mb mb-4">20   </span><span class="tm-gallery-price mb">INR</span>
+								
+								<a  class="btn addtocart" >Add to Cart</a>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="{% static 'img/gallery/07.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Sed ultricies dui</h4>
+								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
+								<span class="tm-gallery-price mb mb-4">94 </span><span class="tm-gallery-price mb">INR</span>
+								
+								<a  class="btn addtocart" >Add to Cart</a>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="{% static 'img/gallery/08.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Donec porta consequat</h4>
+								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
+								<span class="tm-gallery-price mb mb-4">15 </span><span class="tm-gallery-price mb">INR</span>
+								
+								<a  class="btn addtocart" >Add to Cart</a>
+							</figcaption>
+						</figure>
+					</article>
+				</div> <!-- gallery page 1 -->
+				
+				<!-- gallery page 2 -->
+				<div id="tm-gallery-page-salad" class="tm-gallery-page hidden">
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="{% static 'img/gallery/04.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Salad Menu One</h4>
+								<p class="tm-gallery-description">Proin eu velit egestas, viverra sapien eget, consequat nunc. Vestibulum tristique</p>
+								<span class="tm-gallery-price mb mb-4">25 </span><span class="tm-gallery-price mb">INR</span>
+								
+								<a  class="btn addtocart" >Add to Cart</a>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="{% static 'img/gallery/03.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Second Title Salad</h4>
+								<p class="tm-gallery-description">Proin eu velit egestas, viverra sapien eget, consequat nunc. Vestibulum tristique</p>
+								<span class="tm-gallery-price mb mb-4">30 </span><span class="tm-gallery-price mb">INR</span>
+								
+								<a  class="btn addtocart" >Add to Cart</a>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="{% static 'img/gallery/05.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Third Salad Item</h4>
+								<p class="tm-gallery-description">Proin eu velit egestas, viverra sapien eget, consequat nunc. Vestibulum tristique</p>
+								<span class="tm-gallery-price mb mb-4">45 </span><span class="tm-gallery-price mb">INR</span>
+								
+								<a  class="btn addtocart" >Add to Cart</a>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="{% static 'img/gallery/01.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Superior Salad</h4>
+								<p class="tm-gallery-description">Proin eu velit egestas, viverra sapien eget, consequat nunc. Vestibulum tristique</p>
+								<span class="tm-gallery-price mb mb-4">50 </span><span class="tm-gallery-price mb">INR</span>
+								
+								<a  class="btn addtocart" >Add to Cart</a>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="{% static 'img/gallery/08.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Sed ultricies dui</h4>
+								<p class="tm-gallery-description">Proin eu velit egestas, viverra sapien eget, consequat nunc. Vestibulum tristique</p>
+								<span class="tm-gallery-price mb mb-4">55  </span><span class="tm-gallery-price mb">INR</span>
+								
+								<a  class="btn addtocart" >Add to Cart</a>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="{% static 'img/gallery/07.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Maecenas eget justo</h4>
+								<p class="tm-gallery-description">Proin eu velit egestas, viverra sapien eget, consequat nunc. Vestibulum tristique</p>
+								<span class="tm-gallery-price mb mb-4">75 </span><span class="tm-gallery-price mb">INR</span>
+								
+								<a  class="btn addtocart" >Add to Cart</a>
+							</figcaption>
+						</figure>
+					</article>
+				</div> <!-- gallery page 2 -->
+				
+				<!-- gallery page 3 -->
+				<div id="tm-gallery-page-noodle" class="tm-gallery-page hidden">
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="{% static 'img/gallery/08.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Noodle One</h4>
+								<p class="tm-gallery-description">Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+								<span class="tm-gallery-price mb mb-4">12 </span><span class="tm-gallery-price mb">INR</span>
+								
+								<a  class="btn addtocart" >Add to Cart</a>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="{% static 'img/gallery/07.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Noodle Second</h4>
+								<p class="tm-gallery-description">Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+								<span class="tm-gallery-price mb mb-4">15 </span><span class="tm-gallery-price mb">INR</span>
+								
+								<a  class="btn addtocart" >Add to Cart</a>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="{% static 'img/gallery/06.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Third Soft Noodle</h4>
+								<p class="tm-gallery-description">Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+								<span class="tm-gallery-price mb mb-4">20 </span><span class="tm-gallery-price mb">INR</span>
+								
+								<a  class="btn addtocart" >Add to Cart</a>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="{% static 'img/gallery/05.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Aliquam sagittis</h4>
+								<p class="tm-gallery-description">Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+								<span class="tm-gallery-price mb mb-4">30 </span><span class="tm-gallery-price mb">INR</span>
+								
+								<a  class="btn addtocart" >Add to Cart</a>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="{% static 'img/gallery/04.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Maecenas eget justo</h4>
+								<p class="tm-gallery-description">Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+								<span class="tm-gallery-price mb mb-4">35 </span><span class="tm-gallery-price mb">INR</span>
+								
+								<a  class="btn addtocart" >Add to Cart</a>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="{% static 'img/gallery/03.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Quisque et felis eros</h4>
+								<p class="tm-gallery-description">Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+								<span class="tm-gallery-price mb mb-4">40 </span><span class="tm-gallery-price mb">INR</span>
+								
+								<a  class="btn addtocart" >Add to Cart</a>
+							</figcaption>
+						</figure>
+					</article>
+
+				</div> <!-- gallery page 3 -->
+			</div>
+			
+		</main>
+		{% endblock main %}
+		<footer class="tm-footer text-center">
+			<p>Copyright &copy; 2020 Simple House 
+            
+            | Design: <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
+		</footer>
+	</div>
+	<script>
+		function cartcount(){
+			var cart=JSON.parse(localStorage.getItem("cart"))
+		 var cartcount=document.querySelector("#cartcount")
+		 cartcount.innerHTML=cart.length
+		}
+	
+  
+	</script>
+	
+	{% block script %}
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/parallax.min.js' %}"></script>
+	<script>
+		$(document).ready(function(){
+			// Handle click on paging links
+			$('.tm-paging-link').click(function(e){
+				e.preventDefault();
+				
+				var page = $(this).text().toLowerCase();
+				$('.tm-gallery-page').addClass('hidden');
+				$('#tm-gallery-page-' + page).removeClass('hidden');
+				$('.tm-paging-link').removeClass('active');
+				$(this).addClass("active");
+			});
+		});
+	</script>
+	<script>
+
+	if (localStorage.cart) {
+			cartcount()
+			console.log("cart exist");
+			} else {
+			window.localStorage.setItem("cart",JSON.stringify([]))
+			console.log(localStorage.cart)
+			cartcount()
+			}
+			document.querySelectorAll('.addtocart').forEach(item => {
+  item.addEventListener('click', event => {
+    //handle click
+	var parent1=item.parentElement.parentElement
+	var parent=item.parentElement
+	var dish=parent.children[0].innerHTML
+	var price=parent.children[2].innerHTML
+	var imgurl=parent1.children[0].src
+
+	
+	var cart=JSON.parse(localStorage.getItem("cart"));
+	if (cart.length==0){
+		cart.push({"dish":dish,"price":price,"imgurl":imgurl,"qty":1})
+		window.localStorage.setItem("cart",JSON.stringify(cart))
+		cartcount()
+
+	}
+	else{
+	var exist=0;
+	
+	cart.forEach(function (Item) {
+		if (dish==Item.dish){
+			exist=1;
+			console.log(exist);
+			console.log("existst");
+			Item.qty=Item.qty+1;
+			window.localStorage.setItem("cart",JSON.stringify(cart));
+		}
+	});
+	
+	
+	console.log("forloop over")
+	if(exist==0){
+		console.log(exist)
+		console.log("existst not")
+		cart.push({"dish":dish,"price":price,"imgurl":imgurl,"qty":1})
+		window.localStorage.setItem("cart",JSON.stringify(cart))
+	}
+	cartcount()
+
+}
+	
+
+
+  })
+})
+	</script>
+	{% endblock script %}	
+
+</body>
+</html>
