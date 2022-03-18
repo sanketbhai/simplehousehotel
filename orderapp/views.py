@@ -9,9 +9,9 @@ def index(request):
     return render(request,"index.html")
 def cart(request):
     start1=time(9,0,0)
-    end1=time(13,0,0)
-    start2=time(15,0,0)
-    end2=time(23,30,0)   
+    end1=time(12,0,0)
+    start2=time(17,0,0)
+    end2=time(22,0,0)   
     if (start1<= datetime.now(tz=pytz.timezone('Asia/Kolkata')).time()  <=end1) or (start2<= datetime.now().time()  <=end2): 
         return render(request,"cart.html",{"time":1})
     else:
