@@ -27,6 +27,10 @@ def placeorder(request):
         products=json.loads(request.POST.get("products"))
         o=order(name=name,email=email,phone=phone,address=address,price=price,products=products)
         o.save()
-        return HttpResponse("form.html")
+        return render(request,"form.html",{"model":1})
     else:
         return render(request,"form.html")
+def about(request):
+    return render(request,'about.html')
+def contact(request):
+    return render(request,'contact.html')

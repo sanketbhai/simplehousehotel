@@ -4,7 +4,7 @@
 
 	{% load static %}
 	
-    {% block title %}<title>cart</title>{% endblock %}
+    {% block title %}<title>Simple House - Cart</title>{% endblock %}
    
    
    
@@ -72,17 +72,17 @@
                               </div>
           
                               {% if time %}
-                              <form method="GET" action="{% url 'placeorder' %}">
-                                {% csrf_token %}
+                              
+                                
                                 <div class="d-flex flex-row-reverse">
-                              <button id="checkout" class=" btn rounded-0 " style="background-color: #2F956D;color:white;">
+                              <a href="{% url 'placeorder' %}" id="checkout" class=" btn rounded-0 " style="background-color: #2F956D;color:white;">
                                 
                                   <span type="submit">Checkout <i class="las la-arrow-right"></i></span>
                               
                                 
-                              </button>
+                              </a>
                             </div>
-                            </form> 
+                   
                               {% else %}
 
                               <div id="checkout" class=" btn rounded-0 " style="background-color: red;color:white;">
@@ -128,7 +128,12 @@
 </script>
 <script>
 
-
+var elements = document.getElementsByClassName("tm-nav-link");
+		 console.log(elements)
+		 for (let e of elements){
+			e.classList.remove("active");
+		 };
+   document.getElementsByClassName("cart")[0].classList.add("active");
 
 if (localStorage.cart) {
 

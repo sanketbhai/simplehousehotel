@@ -8,8 +8,8 @@
 	<meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	{% block title %}<title>Simple House Template</title>{% endblock %}
-    
+	{% block title %}<title>Simple House Hotels</title>{% endblock %}
+	<link rel="shortcut icon" href="{% static 'img/simple-house-logo.png' %}" style="filter: invert(70%);">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />    
 	<link href="{% static 'css/templatemo-style.css' %}" rel="stylesheet" />
 </head>
@@ -32,16 +32,16 @@ https://templatemo.com/tm-539-simple-house
 						<div class="col-md-6 col-12">
 							<img src="{% static 'img/simple-house-logo.png' %}" alt="Logo" class="tm-site-logo" /> 
 							<div class="tm-site-text-box">
-								<h1 class="tm-site-title">Simple House</h1>
-								<h6 class="tm-site-description">new restaurant template</h6>	
+								<h1 class="tm-site-title">Simple House Hotels</h1>
+								<h6 class="tm-site-description">Fast home dilivery</h6>	
 							</div>
 						</div>
 						<nav class="col-md-6 col-12 tm-nav">
 							<ul class="tm-nav-ul">
-								<li class="tm-nav-li"><a href="index.html" class="tm-nav-link active">Home</a></li>
-								<li class="tm-nav-li"><a href="about.html" class="tm-nav-link">About</a></li>
-								<li class="tm-nav-li"><a href="contact.html" class="tm-nav-link">Contact</a></li>
-								<li class="tm-nav-li"><a href="{% url 'cart' %}" class="tm-nav-link"><i class="las la-shopping-cart " style="
+								<li class="tm-nav-li"><a href="{% url 'index' %}" class="tm-nav-link active">Home</a></li>
+								<li class="tm-nav-li"><a href="{% url 'about' %}" class="tm-nav-link about">About</a></li>
+								<!-- <li class="tm-nav-li"><a href="{% url 'contact' %}" class="tm-nav-link contact">Contact</a></li> -->
+								<li class="tm-nav-li"><a href="{% url 'cart' %}" class="tm-nav-link cart"><i class="las la-shopping-cart " style="
 									font-size: 26px;
 								"></i></a></li>
 								<span id="cartcount" style="padding-right: 10px;background-color: aliceblue;color:black;height: 23px;width: 45px;border-radius: 100%;position: relative;right: 33px;bottom: 16px;">4</span>
@@ -76,8 +76,8 @@ https://templatemo.com/tm-539-simple-house
 						<figure>
 							<img src="{% static 'img/gallery/01.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
 							<figcaption>
-								<h4 class="tm-gallery-title">Fusce dictum finibus</h4>
-								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
+								<h4 class="tm-gallery-title">MARGHERITA</h4>
+								<p class="tm-gallery-description">A hugely popular margherita, with a deliciously tangy single cheese topping</p>
 								<span class="tm-gallery-price mb-4">45 </span><span class="tm-gallery-price mb">INR</span>
 								
 								<a  class="btn addtocart" >Add to Cart</a>
@@ -89,9 +89,9 @@ https://templatemo.com/tm-539-simple-house
 						<figure>
 							<img src="{% static 'img/gallery/02.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
 							<figcaption>
-								<h4 class="tm-gallery-title">Aliquam sagittis</h4>
-								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
-								<span class="tm-gallery-price mb mb-4">65  </span><span class="tm-gallery-price mb">INR</span>
+								<h4 class="tm-gallery-title">DOUBLE CHEESE MARGHERITA</h4>
+								<p class="tm-gallery-description">The ever-popular Margherita - loaded with extra cheese... </p>
+								<span class="tm-gallery-price mb mb-4">65 </span><span class="tm-gallery-price mb">INR</span>
 								
 								<a  class="btn addtocart" >Add to Cart</a>
 							</figcaption>
@@ -101,9 +101,9 @@ https://templatemo.com/tm-539-simple-house
 						<figure>
 							<img src="{% static 'img/gallery/03.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
 							<figcaption>
-								<h4 class="tm-gallery-title">Sed varius turpis</h4>
-								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
-								<span class="tm-gallery-price mb mb-4">30</span><span class="tm-gallery-price mb">INR</span>
+								<h4 class="tm-gallery-title">FARM HOUSE</h4>
+								<p class="tm-gallery-description">A pizza that goes ballistic on veggies! Check out this mouth watering ....</p>
+								<span class="tm-gallery-price mb mb-4">30 </span><span class="tm-gallery-price mb">INR</span>
 								
 								<a  class="btn addtocart" >Add to Cart</a>
 							</figcaption>
@@ -113,9 +113,9 @@ https://templatemo.com/tm-539-simple-house
 						<figure>
 							<img src="{% static 'img/gallery/04.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
 							<figcaption>
-								<h4 class="tm-gallery-title">Aliquam sagittis</h4>
-								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
-								<span class="tm-gallery-price mb mb-4">25</span><span class="tm-gallery-price mb">INR</span>
+								<h4 class="tm-gallery-title">PEPPY PANEER</h4>
+								<p class="tm-gallery-description">Chunky paneer with crisp capsicum and spicy red pepper - quite a mouthful!</p>
+								<span class="tm-gallery-price mb mb-4">25 </span><span class="tm-gallery-price mb">INR</span>
 								
 								<a  class="btn addtocart" >Add to Cart</a>
 							</figcaption>
@@ -125,8 +125,8 @@ https://templatemo.com/tm-539-simple-house
 						<figure>
 							<img src="{% static 'img/gallery/05.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
 							<figcaption>
-								<h4 class="tm-gallery-title">Maecenas eget justo</h4>
-								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
+								<h4 class="tm-gallery-title">MEXICAN GREEN WAVE</h4>
+								<p class="tm-gallery-description">A pizza loaded with crunchy onions, crisp capsicum, juicy tomatoes and ...</p>
 								<span class="tm-gallery-price mb mb-4">80 </span><span class="tm-gallery-price mb">INR</span>
 								
 								<a  class="btn addtocart" >Add to Cart</a>
@@ -137,9 +137,9 @@ https://templatemo.com/tm-539-simple-house
 						<figure>
 							<img src="{% static 'img/gallery/06.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
 							<figcaption>
-								<h4 class="tm-gallery-title">Quisque et felis eros</h4>
-								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
-								<span class="tm-gallery-price mb mb-4">20   </span><span class="tm-gallery-price mb">INR</span>
+								<h4 class="tm-gallery-title">DELUXE VEGGIE</h4>
+								<p class="tm-gallery-description">For a vegetarian looking for a BIG treat that goes easy on - quite a mouthful!...</p>
+								<span class="tm-gallery-price mb mb-4">20 </span><span class="tm-gallery-price mb">INR</span>
 								
 								<a  class="btn addtocart" >Add to Cart</a>
 							</figcaption>
@@ -149,7 +149,7 @@ https://templatemo.com/tm-539-simple-house
 						<figure>
 							<img src="{% static 'img/gallery/07.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
 							<figcaption>
-								<h4 class="tm-gallery-title">Sed ultricies dui</h4>
+								<h4 class="tm-gallery-title">CHEESE N CORN</h4>
 								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
 								<span class="tm-gallery-price mb mb-4">94 </span><span class="tm-gallery-price mb">INR</span>
 								
@@ -161,8 +161,8 @@ https://templatemo.com/tm-539-simple-house
 						<figure>
 							<img src="{% static 'img/gallery/08.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
 							<figcaption>
-								<h4 class="tm-gallery-title">Donec porta consequat</h4>
-								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
+								<h4 class="tm-gallery-title">PANEER MAKHANI</h4>
+								<p class="tm-gallery-description">Paneer and Capsicum on Makhani Sauce - quite a mouthful! tellus accumsan</p>
 								<span class="tm-gallery-price mb mb-4">15 </span><span class="tm-gallery-price mb">INR</span>
 								
 								<a  class="btn addtocart" >Add to Cart</a>
@@ -328,9 +328,9 @@ https://templatemo.com/tm-539-simple-house
 		</main>
 		{% endblock main %}
 		<footer class="tm-footer text-center">
-			<p>Copyright &copy; 2020 Simple House 
+			<p>Copyright &copy; 2022 Simple House 
             
-            | Design: <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
+            </p>
 		</footer>
 	</div>
 	<script>
@@ -361,7 +361,12 @@ https://templatemo.com/tm-539-simple-house
 		});
 	</script>
 	<script>
-
+		 var elements = document.getElementsByClassName("tm-nav-link");
+		 console.log(elements)
+		 for (let e of elements){
+			e.classList.remove("active");
+		 };
+ 			 
 	if (localStorage.cart) {
 			cartcount()
 			console.log("cart exist");

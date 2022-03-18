@@ -4,7 +4,7 @@
 
 {% load static %}
 
-{% block title %}<title>place Order</title>{% endblock %}
+{% block title %}<title>Simple House - Place  Order</title>{% endblock %}
 
 <style>
     body {
@@ -85,6 +85,15 @@ label.radio input:checked+span {
 
 
 {% block main %}
+{% if model %}
+<div class="container mt-5 mb-5 d-flex justify-content-center">
+    <div class="card px-1 py-4">
+        <div class="card-body">
+            <h1>your order has been placed.<a href="{% url 'index' %}"> Continue shoping</a></h1>
+        </div>
+    </div>
+</div>
+{% else %}
 <form method="POST" action="{% url 'placeorder' %}">
     {% csrf_token %}
 <div class="container mt-5 mb-5 d-flex justify-content-center">
@@ -136,6 +145,7 @@ label.radio input:checked+span {
     </div>
 </div> 
 </form>
+{% endif %}
 {% endblock main %}
 
 
@@ -143,6 +153,11 @@ label.radio input:checked+span {
 {% block script %}
 
 <script>
+    var elements = document.getElementsByClassName("tm-nav-link");
+	console.log(elements)
+	for (let e of elements){
+	   e.classList.remove("active");
+	}
     cartcount()
     products=document.querySelector("#products")
     products.innerHTML=localStorage.getItem("cart")
