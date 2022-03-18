@@ -3,16 +3,16 @@ from django.shortcuts import render
 from  datetime import  datetime,time
 import json
 from .models import order
-
+import pytz
 # Create your views here.
 def index(request):
     return render(request,"index.html")
 def cart(request):
     start1=time(9,0,0)
-    end1=time(12,0,0)
+    end1=time(13,0,0)
     start2=time(15,0,0)
     end2=time(23,30,0)   
-    if (start1<= datetime.now().time()  <=end1) or (start2<= datetime.now().time()  <=end2): 
+    if (start1<= datetime.now(tz=pytz.timezone('Asia/Kolkata')).time()  <=end1) or (start2<= datetime.now().time()  <=end2): 
         return render(request,"cart.html",{"time":1})
     else:
         return render(request,"cart.html")
